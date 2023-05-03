@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { BrowserRouter } from "react-router-dom";
 import './App.css';
+import TopNavbar from "./components/ui/TopNavbar";
+import AppRouter from "./components/AppRouter";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if(localStorage.getItem("auth"))
+            dispatch({type: "LOGIN"})
+        else dispatch({type: "LOGOUT"})
+    })
+
+    return (
+        <BrowserRouter>
+            <TopNavbar/>
+            <AppRouter/>
+        </BrowserRouter>
+    );
 }
 
 export default App;

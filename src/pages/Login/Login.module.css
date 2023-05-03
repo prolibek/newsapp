@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.form-wrapper input {
+    margin-bottom: 10px;
+}
+
+.form-wrapper button {
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    width: 50%;
+}
+
+.form-wrapper p {
+    color: red;
+}
